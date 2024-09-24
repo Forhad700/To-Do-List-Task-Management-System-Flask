@@ -17,4 +17,4 @@ A simple full-stack To-Do List application built with Flask and SQLite. Users ca
 - **Backend**: Flask, Flask-SQLAlchemy
 - **Database**: SQLite
 - **Frontend**: HTML, CSS (Semantic UI)
-- 
+  
