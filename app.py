@@ -12,6 +12,10 @@ class Todo(db.Model):
     title = db.Column(db.String(100), nullable=False)
     complete = db.Column(db.Boolean, default=False)
 
+@app.before_first_request
+def create_tables():
+    db.create_all()
+
 @app.route("/")
 def home():
     filter_param = request.args.get("filter")
@@ -64,6 +68,4 @@ def internal_error(error):
     return "An internal error occurred. Please try again later.", 500
 
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
     app.run(debug=True)
