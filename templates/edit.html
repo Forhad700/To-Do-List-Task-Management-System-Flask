@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <style>
+        .ui.buttons .ui.button {
+            margin-right: 0.5rem; /* Add some spacing between buttons */
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-top: 50px;" class="ui container">
+        <h1 style="
+            font-size: 2.5rem; /* Larger font size */
+            font-weight: bold; /* Bold text */
+            background: linear-gradient(90deg, #0072ff, #00c6ff); /* Gradient blue color */
+            -webkit-background-clip: text; /* Clip background to text */
+            -webkit-text-fill-color: transparent; /* Make text fill transparent to show gradient */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            font-family: 'Verdana', sans-serif; /* Modern font */
+            margin-bottom: 1.5rem; /* Space below the header */
+            text-align: center; /* Center-aligned text */
+            padding: 10px; /* Padding around the text */
+            background-color: #f4f4f4; /* Light background color */
+            border-radius: 8px; /* Rounded corners */
+            border: 2px solid #0072ff; /* Border with the same color as the gradient */
+        ">Update Task
+        </h1>
+
+        <form class="ui form" action="/edit/{{ todo.id }}" method="post">
+            <div class="field">
+                <label style="
+                    font-size: 1.5rem; 
+                    font-weight: bold; 
+                    color: #333; 
+                    font-family: 'Arial', sans-serif;">Need a Change?
+                    <br>
+                    <span style="
+                        font-size: 1.2rem; 
+                        color: #666; 
+                        font-family: 'Arial', sans-serif; 
+                    ">Update Your Thoughts!</span>
+                </label>
+                <input type="text" name="title" value="{{ todo.title }}" placeholder="Update Task"><br>
+            </div>
+            <div class="ui buttons">
+                <button class="ui blue button" type="submit">Save</button>
+                <a class="ui red button" href="/">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
